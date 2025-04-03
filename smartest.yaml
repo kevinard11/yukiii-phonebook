@@ -1,0 +1,36 @@
+name: robot-shop
+root-dir: C://Users//ARD//Desktop//robot-shop//
+
+services:
+  cart:
+    dir: cart
+    lang: js
+    base-url:
+      - http://CART:8080/
+      - http://CART_ENDPOINT/shipping/
+  catalog:
+    dir: catalogue
+    lang: js
+    queue-key:
+      - orders
+      - order
+  dispatch:
+    dir: dispatch
+    lang: go
+  payment:
+    dir: payment
+    lang: py
+    queue-key:
+      - orders
+      - order
+  ratings:
+    dir: ratings
+    lang: php
+  shipping:
+    dir: shipping
+    lang: java
+  user:
+    dir: user
+    lang: js
+    base-url:
+      - http://user:8080/
